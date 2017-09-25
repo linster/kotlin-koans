@@ -15,6 +15,20 @@ fun todoTask11(): Nothing = TODO(
 
 fun task11(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, { x, y -> todoTask11() })
+    Collections.sort(arrayList, { o1, o2 ->
+        if (o1 == o2){
+            return@sort 0
+        }
+
+        if (o1 > o2){
+            return@sort -1
+        }
+
+        if (o1 < o2){
+            return@sort 1
+        }
+
+        0
+    })
     return arrayList
 }
